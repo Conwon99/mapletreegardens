@@ -78,6 +78,16 @@ const AboutUs = () => {
                   <p className="text-sm text-muted-foreground">Sustainable practices for a greener future</p>
                 </div>
               </div>
+              
+              <div className="flex items-start gap-3">
+                <div className="bg-primary/10 p-2 rounded-lg">
+                  <Award className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground">Fully Qualified Pesticide Professional</h3>
+                  <p className="text-sm text-muted-foreground">PA1 & PA6 certified operator with proper training for safe pesticide applications</p>
+                </div>
+              </div>
             </div>
 
             <div className="pt-4">

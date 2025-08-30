@@ -37,7 +37,7 @@ const Hero = () => {
               
               <p className="text-xl text-muted-foreground font-medium max-w-lg leading-relaxed">
                 Expert tree surgery, garden maintenance, hedge cutting, and landscaping services 
-                across Troon, Ayr, Prestwick, and Ayrshire. Free quotes, fully insured, 15+ years experience.
+                across Troon, Ayr, Prestwick, and Ayrshire. Free quotes, Fully Qualified Arborist, 15+ years experience.
               </p>
             </div>
 
@@ -87,9 +87,9 @@ const Hero = () => {
           {/* Hero Images */}
           <div className="flex justify-center lg:justify-end">
             <img
-              src="/lovable-uploads/261430b9-3f76-4615-bc01-41659d58a82f.png"
+              src="/hero window.png"
               alt="Professional tree and gardening services in Troon, Ayrshire"
-              className="w-full max-w-lg h-[500px] lg:h-[600px] object-contain"
+              className="w-full max-w-4xl h-[800px] lg:h-[900px] object-contain"
             />
           </div>
         </div>

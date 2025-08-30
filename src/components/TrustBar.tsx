@@ -8,7 +8,7 @@ const TrustBar = () => {
     },
     {
       icon: Shield,
-      text: "Insured"
+              text: "Fully Qualified Arborist"
     },
     {
       icon: Phone,

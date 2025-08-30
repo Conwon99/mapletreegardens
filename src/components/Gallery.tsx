@@ -6,39 +6,39 @@ const Gallery = () => {
 
   const galleryImages = [
     {
-      src: "/api/placeholder/400/300",
-      alt: "Beautiful garden transformation in Troon - before and after landscaping",
-      title: "Garden Transformation",
+      src: "/lovable-uploads/garden1.jpg",
+      alt: "Professional garden strimming and edging work in Troon",
+      title: "Garden Strimming & Edging",
       location: "Troon"
     },
     {
-      src: "/api/placeholder/400/300", 
-      alt: "Professional tree pruning services in Ayrshire",
-      title: "Tree Pruning",
+      src: "/lovable-uploads/treecutting.jpg", 
+      alt: "Professional tree surgery and removal services in Ayrshire",
+      title: "Tree Surgery & Removal",
       location: "Ayr"
     },
     {
-      src: "/api/placeholder/400/300",
+      src: "/lovable-uploads/hedge.jpg",
       alt: "Hedge trimming and garden maintenance in Prestwick",
       title: "Hedge Trimming", 
       location: "Prestwick"
     },
     {
-      src: "/api/placeholder/400/300",
+      src: "/lovable-uploads/lawnmower.jpg",
       alt: "Lawn care and grass cutting services",
       title: "Lawn Care",
       location: "Troon"
     },
     {
-      src: "/api/placeholder/400/300",
-      alt: "Garden clearance and waste removal services",
-      title: "Garden Clearance",
+      src: "/lovable-uploads/hedge2.jpg",
+      alt: "Additional hedge cutting and garden maintenance work",
+      title: "Hedge Maintenance",
       location: "Ayr"
     },
     {
-      src: "/api/placeholder/400/300",
-      alt: "Professional fencing installation in Ayrshire",
-      title: "Fencing Installation",
+      src: "/lovable-uploads/hero.jpg",
+      alt: "Professional garden services and landscaping in Ayrshire",
+      title: "Garden Services",
       location: "Prestwick"
     }
   ];
