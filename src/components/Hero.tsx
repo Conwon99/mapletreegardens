@@ -32,12 +32,12 @@ const Hero = () => {
               <h1 className="font-display font-bold text-5xl lg:text-6xl text-foreground leading-tight">
                 Professional{" "}
                 <span className="text-primary">Garden Services</span>{" "}
-                in Troon & Ayrshire
+                in Ayrshire
               </h1>
               
               <p className="text-xl text-muted-foreground font-medium max-w-lg leading-relaxed">
-                Expert tree surgery, garden maintenance, hedge cutting, and landscaping services 
-                across Troon, Ayr, Prestwick, and Ayrshire. Free quotes, Fully Qualified Arborist, 15+ years experience.
+                Fully qualified arborist with 20+ years experience. Expert tree surgery, garden maintenance, 
+                hedge cutting, and landscaping services in Troon, Dundonald & Prestwick. Tree work also available in Ayr. Free quotes, fully insured.
               </p>
             </div>
 
@@ -54,7 +54,7 @@ const Hero = () => {
             {/* Statistics */}
             <div className="grid grid-cols-2 gap-8 pt-8">
               <div className="space-y-2">
-                <div className="text-4xl lg:text-5xl font-bold text-primary">15+</div>
+                <div className="text-4xl lg:text-5xl font-bold text-primary">20+</div>
                 <div className="text-muted-foreground font-medium">Years Experience</div>
               </div>
               <div className="space-y-2">
@@ -85,11 +85,11 @@ const Hero = () => {
           </div>
 
           {/* Hero Images */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-center lg:justify-end -mt-16">
             <img
               src="/hero window.png"
-              alt="Professional tree and gardening services in Troon, Ayrshire"
-              className="w-full max-w-4xl h-[800px] lg:h-[900px] object-contain"
+              alt="Professional tree and gardening services in Ayrshire"
+              className="w-full max-w-4xl h-[700px] lg:h-[850px] object-contain"
             />
           </div>
         </div>

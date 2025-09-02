@@ -3,25 +3,25 @@ import { Star } from "lucide-react";
 const Reviews = () => {
   const reviews = [
     {
-      name: "Sarah Mitchell",
+      name: "Eric Smith",
+      location: "Ayrshire",
+      rating: 5,
+      text: "Gordon responded very quickly to my initial enquiry to cut back and top some very large trees. He provided a competitive quote and carried out the work to an excellent standard. Gordon was friendly, easy to work with and I would highly recommend him.",
+      service: "Tree Work"
+    },
+    {
+      name: "Fiona Mitchell",
+      location: "Ayrshire",
+      rating: 5,
+      text: "Lovely people. Excellent work and will call on their services in the future.",
+      service: "Garden Services"
+    },
+    {
+      name: "The decking block company",
       location: "Troon",
       rating: 5,
-      text: "Gordon transformed our overgrown garden into a beautiful space. His attention to detail and professionalism is outstanding. Highly recommend!",
-      service: "Garden Makeover"
-    },
-    {
-      name: "James Robertson",
-      location: "Prestwick", 
-      rating: 5,
-      text: "Excellent tree work services. Gordon safely removed two large trees and cleaned up perfectly. Will definitely use again.",
-      service: "Tree Removal"
-    },
-    {
-      name: "Margaret Wilson",
-      location: "Ayr",
-      rating: 5,
-      text: "Regular garden maintenance for over a year now. Always reliable, professional, and reasonably priced. Garden looks amazing year-round.",
-      service: "Garden Maintenance"
+      text: "Top Bloke!! We called Gordon asking him to carry out some work in Troon for us. We are a company based in Shropshire/Midlands who Gordon did not know our only communication was emails, phone calls and photos. Maple Tree & Gardening services completed the work as promised to a high standard using his own initiative talking with the customer. We cant thank him enough! These companies like Maple Tree & Gardening services are a rare find!",
+      service: "Professional Services"
     }
   ];
 

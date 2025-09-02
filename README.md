@@ -1,73 +1,54 @@
-# Welcome to your Lovable project
+# Maple Tree & Gardening Services
 
-## Project info
+Professional garden maintenance, tree surgery, and landscaping services in Troon, Ayrshire, and across Scotland.
 
-**URL**: https://lovable.dev/projects/ef7f9535-306e-45c8-bf54-2e44e821030c
+## About Us
 
-## How can I edit this code?
+Maple Tree & Gardening Services is a fully qualified and experienced gardening business serving Troon, Ayr, Prestwick, and the wider Ayrshire area. With over 15 years of experience, we provide:
 
-There are several ways of editing your application.
+- **Tree Surgery & Removal** - Fully Qualified Arborist services
+- **Lawn Mowing & Grass Cutting** - Professional lawn care
+- **Hedge Cutting & Trimming** - Expert hedge maintenance
+- **Garden Strimming & Edging** - Precision edge work
+- **Pesticide Applications** - PA1 & PA6 certified professional
 
-**Use Lovable**
+## Our Qualifications
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ef7f9535-306e-45c8-bf54-2e44e821030c) and start prompting.
+- ✅ **15+ Years Experience** in garden services
+- ✅ **Fully Qualified Arborist** 
+- ✅ **PA1 & PA6 Pesticide Professional** - Properly trained and certified
+- ✅ **Fully Insured** and professional service
+- ✅ **500+ Happy Customers** across Ayrshire
 
-Changes made via Lovable will be committed automatically to this repo.
+## Contact Information
 
-**Use your preferred IDE**
+- **Phone**: 07853 224528
+- **Areas Served**: Troon, Ayr, Prestwick, and across Ayrshire
+- **Services**: Free quotes available for all garden work
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Technology
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+This website is built with:
+- React + TypeScript
+- Vite build tool
+- Tailwind CSS
+- Shadcn/ui components
 
-Follow these steps:
+## Development
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+To run this project locally:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+To build for production:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run build
+```
 
-**Use GitHub Codespaces**
+## License
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/ef7f9535-306e-45c8-bf54-2e44e821030c) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+© 2024 Maple Tree & Gardening Services. All rights reserved.

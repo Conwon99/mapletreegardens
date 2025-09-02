@@ -5,7 +5,7 @@ const AboutUs = () => {
   return (
     <section id="about" className="py-20 px-4 bg-background">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-6">
@@ -19,14 +19,15 @@ const AboutUs = () => {
               <h2 className="font-display font-bold text-4xl lg:text-5xl text-foreground leading-tight">
                 Trusted{" "}
                 <span className="text-primary">Garden Services</span>{" "}
-                in Ayrshire Since 2009
+                in Troon, Dundonald & Prestwick Since 2004
               </h2>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                With over 15 years of experience serving Troon, Ayr, Prestwick, and across Ayrshire, 
+                With over 20 years of experience serving Troon, Dundonald, and Prestwick, 
                 we're the trusted local experts for professional garden maintenance, tree surgery, 
-                and landscaping services. Our team combines traditional gardening expertise with 
-                modern techniques to deliver exceptional results.
+                and landscaping services. We also provide tree work services in Ayr, though garden 
+                maintenance is currently limited to our primary service areas. Our team combines 
+                traditional gardening expertise with modern techniques to deliver exceptional results.
               </p>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -44,8 +45,8 @@ const AboutUs = () => {
                   <Award className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground">15+ Years Experience</h3>
-                  <p className="text-sm text-muted-foreground">Proven expertise in all aspects of gardening</p>
+                  <h3 className="font-semibold text-foreground">Fully Qualified Arborist</h3>
+                  <p className="text-sm text-muted-foreground">20+ years of professional tree surgery expertise</p>
                 </div>
               </div>
               
@@ -64,8 +65,8 @@ const AboutUs = () => {
                   <Clock className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground">Reliable Service</h3>
-                  <p className="text-sm text-muted-foreground">On-time, professional, and dependable</p>
+                  <h3 className="font-semibold text-foreground">Fully Qualified Pesticide Pro</h3>
+                  <p className="text-sm text-muted-foreground">PA1 & PA6 certified operator for safe pesticide applications</p>
                 </div>
               </div>
               
@@ -74,18 +75,8 @@ const AboutUs = () => {
                   <Leaf className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground">Eco-Friendly</h3>
-                  <p className="text-sm text-muted-foreground">Sustainable practices for a greener future</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <div className="bg-primary/10 p-2 rounded-lg">
-                  <Award className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground">Fully Qualified Pesticide Professional</h3>
-                  <p className="text-sm text-muted-foreground">PA1 & PA6 certified operator with proper training for safe pesticide applications</p>
+                  <h3 className="font-semibold text-foreground">NPTC Qualified</h3>
+                  <p className="text-sm text-muted-foreground">City & Guilds NPTC certified for professional standards</p>
                 </div>
               </div>
             </div>
@@ -102,17 +93,34 @@ const AboutUs = () => {
           </div>
 
           {/* Image */}
-          <div className="relative">
-            <img
-              src="/lovable-uploads/5314906b-f385-471d-9ac6-f3b6a8c923f5.png"
-              alt="Gordon from Maple Tree & Gardening Services with his family"
-              className="w-full h-[350px] lg:h-[450px] object-contain"
-            />
-            
-            {/* Experience Badge */}
-            <div className="absolute top-6 right-6 bg-primary text-primary-foreground rounded-xl px-4 py-3 shadow-lg">
-              <div className="text-2xl font-bold">15+</div>
-              <div className="text-sm">Years</div>
+          <div className="relative flex flex-col justify-start pt-8">
+            <div className="relative">
+              <img
+                src="/aboutimg.png"
+                alt="Gordon from Maple Tree & Gardening Services with his family"
+                className="w-full h-auto max-h-[450px] object-contain rounded-2xl"
+              />
+              
+              {/* Experience Badge */}
+              <div className="absolute top-6 right-6 bg-primary text-primary-foreground rounded-xl px-4 py-3 shadow-lg">
+                <div className="text-2xl font-bold">20+</div>
+                <div className="text-sm">Years</div>
+              </div>
+            </div>
+
+            {/* NPTC Qualification Image */}
+            <div className="pt-8">
+              <div className="bg-muted/20 rounded-lg p-6 text-center">
+                <h3 className="font-semibold text-lg text-foreground mb-0">Professional Qualifications</h3>
+                <img
+                  src="/lovable-uploads/Lowe-Maintenance-City-Guilds-NPTC-Qualifications.jpg"
+                  alt="NPTC City & Guilds Qualifications"
+                  className="w-full max-w-md mx-auto h-auto rounded-lg mt-4"
+                />
+                <p className="text-sm text-muted-foreground mt-3">
+                  NPTC certified for professional tree surgery and garden maintenance standards
+                </p>
+              </div>
             </div>
           </div>
         </div>
