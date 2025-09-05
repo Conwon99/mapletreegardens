@@ -53,13 +53,13 @@ const ServicesGrid = () => {
             Our Services
           </h2>
           <p className="text-xl text-[hsl(var(--asphalt-grey))] max-w-3xl mx-auto">
-            Professional garden maintenance, tree surgery, and landscaping services in Troon, Ayr, Prestwick, and across Ayrshire. From regular lawn mowing to emergency tree removal, we provide reliable, Fully Qualified Arborist garden care with free quotes.
+            Professional garden maintenance, tree surgery, and landscaping services in Troon, Ayr, Prestwick, and across Ayrshire. From regular lawn mowing to emergency tree removal, we provide reliable, insured garden care with free quotes.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="card-service group flex flex-col h-full">
+            <div key={index} className="card-service group">
               {/* Service Image */}
               <div className="relative mb-6 rounded-2xl overflow-hidden">
                 <img
@@ -73,7 +73,7 @@ const ServicesGrid = () => {
               </div>
 
               {/* Service Content */}
-              <div className="flex flex-col flex-1 space-y-4">
+              <div className="space-y-4">
                 <div>
                   <h3 className="font-display text-2xl font-bold text-[hsl(var(--asphalt-grey))] mb-2">
                     {service.title}
@@ -84,7 +84,7 @@ const ServicesGrid = () => {
                 </div>
 
                 {/* Features List */}
-                <ul className="space-y-2 flex-1">
+                <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-2 text-sm text-[hsl(var(--asphalt-grey))]">
                       <div className="w-1.5 h-1.5 bg-[hsl(var(--grass-green))] rounded-full mt-2 flex-shrink-0" />
@@ -96,7 +96,7 @@ const ServicesGrid = () => {
                 {/* CTA Button */}
                 <Button 
                   onClick={handleQuoteClick}
-                  className="w-full bg-[hsl(var(--grass-green))] hover:bg-[hsl(var(--grass-green))] hover:opacity-90 text-[hsl(var(--asphalt-grey))] font-semibold rounded-full group/button mt-auto"
+                  className="w-full bg-[hsl(var(--grass-green))] hover:bg-[hsl(var(--grass-green))] hover:opacity-90 text-white font-semibold rounded-full group/button"
                 >
                   Request a Quote
                   <ArrowRight className="w-4 h-4 ml-2 group-hover/button:translate-x-1 transition-transform" />

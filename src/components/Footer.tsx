@@ -4,8 +4,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[hsl(var(--grass-green))] text-white py-16 px-4">
-      <div className="container mx-auto max-w-6xl">
+    <footer className="relative text-white py-16 px-4" style={{ backgroundImage: 'url(/footer2.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Company Info */}
           <div className="space-y-6">

@@ -33,25 +33,51 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Create mailto link with form data
-    const subject = "Free Quote Request from Website";
-    const body = `Name: ${formData.name}
-Phone: ${formData.phone}
-Email: ${formData.email}
-Postcode: ${formData.postcode}
-Services Needed: ${formData.services.join(', ')}
-Message: ${formData.message}`;
-    
-    const mailtoLink = `mailto:mapletreeayshire@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
-    
-    toast({
-      title: "Quote request ready!",
-      description: "Your email client will open with the request details. We'll respond within 24 hours.",
-    });
+    try {
+      const response = await fetch('https://formspree.io/f/xnnbokpv', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          postcode: formData.postcode,
+          services: formData.services.join(', '),
+          message: formData.message,
+          _subject: 'Free Quote Request from Website'
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Quote request sent!",
+          description: "Thank you for your request. We'll respond within 24 hours.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          postcode: '',
+          services: [],
+          message: ''
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      toast({
+        title: "Error sending request",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleCallClick = () => {
@@ -85,7 +111,7 @@ Message: ${formData.message}`;
               <div className="space-y-4">
                 <Button 
                   onClick={handleCallClick}
-                  className="w-full justify-start gap-4 p-6 h-auto bg-[hsl(var(--grass-green))] hover:bg-[hsl(var(--grass-green))] hover:opacity-90 text-white rounded-2xl"
+                  className="w-full justify-start gap-4 p-6 h-auto bg-[hsl(var(--sky-blue))] hover:bg-[hsl(var(--sky-blue))] hover:opacity-90 text-[hsl(var(--asphalt-grey))] rounded-2xl"
                 >
                   <Phone className="w-6 h-6" />
                   <div className="text-left">
@@ -96,7 +122,7 @@ Message: ${formData.message}`;
 
                 <Button 
                   onClick={handleWhatsAppClick}
-                  className="w-full justify-start gap-4 p-6 h-auto bg-[hsl(var(--sky-blue))] hover:bg-[hsl(var(--sky-blue))] hover:opacity-90 text-[hsl(var(--asphalt-grey))] rounded-2xl"
+                  className="w-full justify-start gap-4 p-6 h-auto bg-[hsl(var(--grass-green))] hover:bg-[hsl(var(--grass-green))] hover:opacity-90 text-white rounded-2xl"
                 >
                   <MessageCircle className="w-6 h-6" />
                   <div className="text-left">
