@@ -93,10 +93,10 @@ const ContactSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-[hsl(var(--asphalt-grey))] mb-6">
-            Get Your Free Quote
+            Get Your Free Tree Surgery & Garden Quote
           </h2>
           <p className="text-xl text-[hsl(var(--asphalt-grey))] max-w-3xl mx-auto">
-            Call or WhatsApp now, or request a free quote—attach photos for a faster estimate.
+            Call or WhatsApp now for emergency tree removal, or request a free quote for tree surgery, garden maintenance, hedge cutting, and lawn care services in Troon & Ayrshire—attach photos for a faster estimate.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ const ContactSection = () => {
           <div className="space-y-8">
             <div>
               <h3 className="font-display text-2xl font-bold text-[hsl(var(--asphalt-grey))] mb-6">
-                Get in Touch Right Now
+                Contact Your Local Tree Surgeon & Gardener
               </h3>
               
               <div className="space-y-4">
@@ -146,8 +146,8 @@ const ContactSection = () => {
               <div className="flex items-start gap-4">
                 <MapPin className="w-6 h-6 text-[hsl(var(--grass-green))] mt-1" />
                 <div>
-                  <div className="font-semibold text-[hsl(var(--asphalt-grey))]">Service Area</div>
-                  <div className="text-[hsl(var(--asphalt-grey))] opacity-80">Troon and across Ayrshire</div>
+                  <div className="font-semibold text-[hsl(var(--asphalt-grey))]">Service Areas</div>
+                  <div className="text-[hsl(var(--asphalt-grey))] opacity-80">Troon, Ayr, Prestwick, Dundonald, and across Ayrshire</div>
                 </div>
               </div>
 

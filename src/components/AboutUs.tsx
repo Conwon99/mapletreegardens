@@ -12,21 +12,21 @@ const AboutUs = () => {
               <div className="flex items-center gap-2 text-primary">
                 <Leaf className="w-6 h-6" />
                 <span className="font-semibold text-sm tracking-wide uppercase">
-                  About Maple Tree & Gardening Services
+                  About Maple Tree & Gardens
                 </span>
               </div>
               
               <h2 className="font-display font-bold text-4xl lg:text-5xl text-foreground leading-tight">
                 Trusted{" "}
-                <span className="text-primary">Garden Services</span>{" "}
+                <span className="text-primary">Tree Surgeon & Gardener</span>{" "}
                 in Troon, Dundonald & Prestwick Since 2004
               </h2>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
                 With over 20 years of experience serving Troon, Dundonald, and Prestwick, 
-                we're the trusted local experts for professional garden maintenance, tree surgery, 
-                and landscaping services. We also provide tree work services in Ayr, though garden 
-                maintenance is currently limited to our primary service areas. Our team combines 
+                we're the trusted local experts for professional tree surgery, garden maintenance, 
+                hedge cutting, and lawn care services. We also provide emergency tree removal and tree work services in Ayr, though garden 
+                maintenance is currently limited to our primary service areas. Our qualified team combines 
                 traditional gardening expertise with modern techniques to deliver exceptional results.
               </p>
               
@@ -97,7 +97,7 @@ const AboutUs = () => {
             <div className="relative">
               <img
                 src="/aboutimg.png"
-                alt="Gordon from Maple Tree & Gardening Services with his family"
+                alt="Gordon from Maple Tree & Gardens with his family"
                 className="w-full h-auto max-h-[450px] object-contain rounded-2xl"
               />
               

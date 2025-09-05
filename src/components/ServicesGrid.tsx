@@ -53,7 +53,7 @@ const ServicesGrid = () => {
             Our Services
           </h2>
           <p className="text-xl text-[hsl(var(--asphalt-grey))] max-w-3xl mx-auto">
-            Professional garden maintenance, tree surgery, and landscaping services in Troon, Ayr, Prestwick, and across Ayrshire. From regular lawn mowing to emergency tree removal, we provide reliable, insured garden care with free quotes.
+            Professional tree surgery, garden maintenance, hedge cutting, and lawn care services in Troon, Ayr, Prestwick, Dundonald, and across Ayrshire. From regular lawn mowing and tree pruning to emergency tree removal and storm damage cleanup, we provide reliable, qualified garden care with free quotes.
           </p>
         </div>
 

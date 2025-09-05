@@ -31,13 +31,13 @@ const Hero = () => {
               
               <h1 className="font-display font-bold text-5xl lg:text-6xl text-foreground leading-tight">
                 Professional{" "}
-                <span className="text-primary">Garden Services</span>{" "}
-                in Ayrshire
+                <span className="text-primary">Tree Surgeon & Gardener</span>{" "}
+                in Troon & Ayrshire
               </h1>
               
               <p className="text-xl text-muted-foreground font-medium max-w-lg leading-relaxed">
-                Fully qualified arborist with 20+ years experience. Expert tree surgery, garden maintenance, 
-                hedge cutting, and landscaping services in Troon, Dundonald & Prestwick. Tree work also available in Ayr. Free quotes, fully insured.
+                Fully qualified arborist with 20+ years experience. Expert <a href="/tree-surgery" className="text-primary hover:underline font-semibold">tree surgery</a>, garden maintenance, 
+                <a href="/lawn-mowing" className="text-primary hover:underline font-semibold"> lawn care</a>, and hedge cutting services in Troon, Dundonald, Prestwick & across Ayrshire. Emergency tree removal and tree work also available in Ayr. Free quotes, fully insured.
               </p>
             </div>
 
