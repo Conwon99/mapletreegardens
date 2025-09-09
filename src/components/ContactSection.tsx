@@ -4,7 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, MessageCircle, Mail, Clock, MapPin } from "lucide-react";
+import { Phone, MessageSquare, Mail, Clock, MapPin } from "lucide-react";
+import { trackPhoneCall, trackMessenger, trackQuoteRequest, trackFormInteraction } from "@/utils/analytics";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -54,6 +55,10 @@ const ContactSection = () => {
       });
 
       if (response.ok) {
+        // Track successful form submission
+        trackQuoteRequest('contact_form', formData.services);
+        trackFormInteraction('quote_form', 'submit_success');
+        
         toast({
           title: "Quote request sent!",
           description: "Thank you for your request. We'll respond within 24 hours.",
@@ -72,6 +77,7 @@ const ContactSection = () => {
         throw new Error('Failed to send message');
       }
     } catch (error) {
+      trackFormInteraction('quote_form', 'submit_error');
       toast({
         title: "Error sending request",
         description: "Please try again or contact us directly.",
@@ -81,11 +87,13 @@ const ContactSection = () => {
   };
 
   const handleCallClick = () => {
+    trackPhoneCall('contact_section');
     window.location.href = "tel:+447853224528";
   };
 
-  const handleWhatsAppClick = () => {
-    window.location.href = "https://wa.me/447853224528?text=Hi%20Gordon,%20I'd%20like%20a%20free%20quote%20for%20my%20garden";
+  const handleMessengerClick = () => {
+    trackMessenger('contact_section');
+    window.open("https://www.facebook.com/profile.php?id=100085773295610", "_blank");
   };
 
   return (
@@ -96,7 +104,7 @@ const ContactSection = () => {
             Get Your Free Tree Surgery & Garden Quote
           </h2>
           <p className="text-xl text-[hsl(var(--asphalt-grey))] max-w-3xl mx-auto">
-            Call or WhatsApp now for emergency tree removal, or request a free quote for tree surgery, garden maintenance, hedge cutting, and lawn care services in Troon & Ayrshire—attach photos for a faster estimate.
+            Call or message us on Facebook now for emergency tree removal, or request a free quote for tree surgery, garden maintenance, hedge cutting, and lawn care services in Troon & Ayrshire—attach photos for a faster estimate.
           </p>
         </div>
 
@@ -121,12 +129,12 @@ const ContactSection = () => {
                 </Button>
 
                 <Button 
-                  onClick={handleWhatsAppClick}
+                  onClick={handleMessengerClick}
                   className="w-full justify-start gap-4 p-6 h-auto bg-[hsl(var(--grass-green))] hover:bg-[hsl(var(--grass-green))] hover:opacity-90 text-white rounded-2xl"
                 >
-                  <MessageCircle className="w-6 h-6" />
+                  <MessageSquare className="w-6 h-6" />
                   <div className="text-left">
-                    <div className="font-semibold text-lg">WhatsApp</div>
+                    <div className="font-semibold text-lg">Facebook Messenger</div>
                     <div className="text-sm opacity-70">Quick response guaranteed</div>
                   </div>
                 </Button>

@@ -1,17 +1,21 @@
 import { Button } from "@/components/ui/button";
-import { Phone, MessageCircle } from "lucide-react";
-import heroImage from "@/assets/hero-garden.jpg";
+import { Phone, MessageSquare } from "lucide-react";
+import LazyImage from "@/components/LazyImage";
+import { trackPhoneCall, trackMessenger, trackQuoteRequest } from "@/utils/analytics";
 
 const Hero = () => {
   const handleCallClick = () => {
+    trackPhoneCall('hero_section');
     window.location.href = "tel:+447853224528";
   };
 
-  const handleWhatsAppClick = () => {
-    window.location.href = "https://wa.me/447853224528?text=Hi%20Gordon,%20I'd%20like%20a%20free%20quote%20for%20my%20garden";
+  const handleMessengerClick = () => {
+    trackMessenger('hero_section');
+    window.open("https://www.facebook.com/profile.php?id=100085773295610", "_blank");
   };
 
   const handleQuoteClick = () => {
+    trackQuoteRequest('scroll_to_form', []);
     document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -74,22 +78,24 @@ const Hero = () => {
                 Call: 07853 224528
               </Button>
               <Button 
-                onClick={handleWhatsAppClick}
+                onClick={handleMessengerClick}
                 variant="ghost" 
                 className="flex items-center gap-2 text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg px-4 py-3 justify-start"
               >
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp
+                <MessageSquare className="w-5 h-5" />
+                Facebook Messenger
               </Button>
             </div>
           </div>
 
           {/* Hero Images */}
           <div className="flex justify-center lg:justify-end -mt-16">
-            <img
-              src="/hero window.png"
-              alt="Professional tree and gardening services in Ayrshire"
+            <LazyImage
+              src="/hero window.webp"
+              alt="Professional tree surgeon Gordon cutting large oak tree in Troon garden with hedge trimming and lawn care services in Ayrshire"
               className="w-full max-w-4xl h-[700px] lg:h-[850px] object-contain"
+              fallbackSrc="/hero window.png"
+              loading="eager"
             />
           </div>
         </div>

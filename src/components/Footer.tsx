@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Facebook } from "lucide-react";
+import { trackExternalLink } from "@/utils/analytics";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -131,6 +132,7 @@ const Footer = () => {
                 href="https://www.facebook.com/profile.php?id=100085773295610" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                onClick={() => trackExternalLink('https://www.facebook.com/profile.php?id=100085773295610', 'Facebook')}
                 className="flex items-center gap-2 text-[hsl(var(--sunshine-yellow))] hover:text-[hsl(var(--donut-pink))] transition-colors"
               >
                 <Facebook className="w-5 h-5" />

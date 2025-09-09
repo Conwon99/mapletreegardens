@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Scissors, TreePine, Hammer, Trash2 } from "lucide-react";
-import garden1Image from "/lovable-uploads/garden1.jpg";
-import lawnmowerImage from "/lovable-uploads/lawnmower.jpg";
-import treecuttingImage from "/lovable-uploads/treecutting.jpg";
-import hedgeImage from "/lovable-uploads/hedge.jpg";
+import LazyImage from "@/components/LazyImage";
+import { trackServiceClick } from "@/utils/analytics";
 
 const ServicesGrid = () => {
   const services = [
@@ -11,7 +9,8 @@ const ServicesGrid = () => {
       title: "Lawn Mowing & Grass Cutting",
       description: "Professional lawn care and garden maintenance in Troon & Ayrshire",
       features: ["Regular lawn mowing service", "Garden edge trimming", "Grass collection & disposal", "Seasonal lawn treatments"],
-      image: lawnmowerImage,
+      image: "/lovable-uploads/lawnmower.webp",
+      fallbackImage: "/lovable-uploads/lawnmower.jpg",
       icon: Scissors,
       color: "grass-green"
     },
@@ -19,7 +18,8 @@ const ServicesGrid = () => {
       title: "Tree Surgery & Removal", 
       description: "Safe tree cutting, pruning and removal services across Ayrshire",
       features: ["Professional tree removal", "Storm damage tree work", "Stump grinding service", "Complete site cleanup"],
-      image: treecuttingImage,
+      image: "/lovable-uploads/treecutting.webp",
+      fallbackImage: "/lovable-uploads/treecutting.jpg",
       icon: TreePine,
       color: "sky-blue"
     },
@@ -27,7 +27,8 @@ const ServicesGrid = () => {
       title: "Hedge Cutting & Trimming",
       description: "Expert hedge maintenance and garden boundary work",
       features: ["Professional hedge cutting", "Hedge shaping & maintenance", "Height reduction service", "Garden debris removal"],
-      image: "/lovable-uploads/hedge2.jpg",
+      image: "/lovable-uploads/hedge2.webp",
+      fallbackImage: "/lovable-uploads/hedge2.jpg",
       icon: Scissors,
       color: "donut-pink"
     },
@@ -35,13 +36,15 @@ const ServicesGrid = () => {
       title: "Garden Strimming & Edging",
       description: "Detailed garden maintenance and precision edge work",
       features: ["Pathway & border edging", "Around garden obstacles", "Hard-to-reach areas", "Professional finishing"],
-      image: garden1Image,
+      image: "/lovable-uploads/garden1.webp",
+      fallbackImage: "/lovable-uploads/garden1.jpg",
       icon: Scissors,
       color: "sunshine-yellow"
     }
   ];
 
-  const handleQuoteClick = () => {
+  const handleQuoteClick = (serviceTitle: string) => {
+    trackServiceClick(serviceTitle, 'services_grid');
     document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -53,7 +56,7 @@ const ServicesGrid = () => {
             Our Services
           </h2>
           <p className="text-xl text-[hsl(var(--asphalt-grey))] max-w-3xl mx-auto">
-            Professional tree surgery, garden maintenance, hedge cutting, and lawn care services in Troon, Ayr, Prestwick, Dundonald, and across Ayrshire. From regular lawn mowing and tree pruning to emergency tree removal and storm damage cleanup, we provide reliable, qualified garden care with free quotes.
+            Professional <a href="/tree-surgery" className="text-[hsl(var(--grass-green))] hover:underline font-semibold">tree surgery</a>, garden maintenance, <a href="/lawn-mowing" className="text-[hsl(var(--grass-green))] hover:underline font-semibold">hedge cutting</a>, and <a href="/lawn-mowing" className="text-[hsl(var(--grass-green))] hover:underline font-semibold">lawn care services</a> in Troon, Ayr, Prestwick, Dundonald, and across Ayrshire. From regular lawn mowing and tree pruning to emergency tree removal and storm damage cleanup, we provide reliable, qualified garden care with free quotes. <a href="/troon" className="text-[hsl(var(--grass-green))] hover:underline font-semibold">Learn more about our Troon services</a>.
           </p>
         </div>
 
@@ -62,10 +65,11 @@ const ServicesGrid = () => {
             <div key={index} className="card-service group">
               {/* Service Image */}
               <div className="relative mb-6 rounded-2xl overflow-hidden">
-                <img
+                <LazyImage
                   src={service.image}
-                  alt={`${service.title} service in Troon and Ayrshire`}
+                  alt={`Professional ${service.title.toLowerCase()} service in Troon, Ayrshire - expert garden maintenance and tree surgery`}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  fallbackSrc={service.fallbackImage}
                 />
                 <div className={`absolute top-4 left-4 w-12 h-12 bg-[hsl(var(--${service.color}))] rounded-full flex items-center justify-center shadow-lg`}>
                   <service.icon className="w-6 h-6 text-[hsl(var(--asphalt-grey))]" />
@@ -95,7 +99,7 @@ const ServicesGrid = () => {
 
                 {/* CTA Button */}
                 <Button 
-                  onClick={handleQuoteClick}
+                  onClick={() => handleQuoteClick(service.title)}
                   className="w-full bg-[hsl(var(--grass-green))] hover:bg-[hsl(var(--grass-green))] hover:opacity-90 text-white font-semibold rounded-full group/button"
                 >
                   Request a Quote

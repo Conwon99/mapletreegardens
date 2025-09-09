@@ -1,17 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
 import { useState } from "react";
+import { trackPhoneCall, trackNavigation, trackQuoteRequest } from "@/utils/analytics";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleCallClick = () => {
+    trackPhoneCall('navigation');
     window.location.href = "tel:+447853224528";
   };
 
   const scrollToSection = (sectionId: string) => {
+    trackNavigation(sectionId);
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
     setIsMenuOpen(false);
+  };
+
+  const handleQuoteClick = () => {
+    trackQuoteRequest('navigation_button', []);
+    scrollToSection("contact-form");
   };
 
   const navItems = [
@@ -19,6 +27,7 @@ const Navigation = () => {
     { label: "Services", onClick: () => scrollToSection("services") },
     { label: "Gallery", onClick: () => scrollToSection("gallery") },
     { label: "Reviews", onClick: () => scrollToSection("reviews") },
+    { label: "FAQ", onClick: () => scrollToSection("faq") },
     { label: "Contact", onClick: () => scrollToSection("contact-form") },
   ];
 
@@ -58,7 +67,7 @@ const Navigation = () => {
               07853 224528
             </Button>
             <Button
-              onClick={() => scrollToSection("contact-form")}
+              onClick={handleQuoteClick}
               className="bg-primary-foreground hover:bg-primary-foreground/90 text-primary px-6 py-2 rounded-full font-semibold"
             >
               Free Quote
@@ -101,7 +110,7 @@ const Navigation = () => {
                   Call: 07853 224528
                 </Button>
                 <Button
-                  onClick={() => scrollToSection("contact-form")}
+                  onClick={handleQuoteClick}
                   className="w-full bg-primary-foreground hover:bg-primary-foreground/90 text-primary"
                 >
                   Get Free Quote

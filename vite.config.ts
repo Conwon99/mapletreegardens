@@ -19,4 +19,30 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Optimize for Core Web Vitals
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          ui: ['lucide-react'],
+        },
+      },
+    },
+    // Enable compression
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+    // Optimize chunk size
+    chunkSizeWarningLimit: 1000,
+  },
+  // Optimize dependencies
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom'],
+  },
 }));

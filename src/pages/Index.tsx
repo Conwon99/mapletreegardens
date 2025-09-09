@@ -5,6 +5,7 @@ import AboutUs from "@/components/AboutUs";
 import ServicesGrid from "@/components/ServicesGrid";
 import Reviews from "@/components/Reviews";
 import Gallery from "@/components/Gallery";
+import FAQ from "@/components/FAQ";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,7 @@ const Index = () => {
       <ServicesGrid />
       <Reviews />
       <Gallery />
+      <FAQ />
       <ContactSection />
       <Footer />
     </main>

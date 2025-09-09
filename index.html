@@ -212,27 +212,37 @@
     <link rel="icon" type="image/svg+xml" href="/maple-leaf.svg" />
     <link rel="alternate icon" href="/favicon.ico" />
     
-    <!-- Google Fonts -->
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/hero window.webp" as="image" type="image/webp">
+    <link rel="preload" href="/aboutimg.webp" as="image" type="image/webp">
+    <link rel="preload" href="/src/main.tsx" as="script" crossorigin>
+    
+    <!-- Google Fonts with font-display: swap for better performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="/hero window.png" as="image" type="image/png">
-    <link rel="preload" href="/aboutimg.png" as="image" type="image/png">
-    <link rel="preload" href="/src/main.tsx" as="script" crossorigin>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V7YSJ55C9T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-V7YSJ55C9T');
+    </script>
 
     <meta property="og:title" content="Tree Surgeon & Gardener Troon | Professional Tree Surgery & Garden Services Ayrshire" />
     <meta property="og:description" content="Professional tree surgeon & qualified gardener serving Troon, Ayr, Prestwick, Dundonald & Ayrshire. Expert tree surgery, garden maintenance, hedge cutting, lawn care & emergency tree removal." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mapletreeandgardens.netlify.app/" />
-    <meta property="og:image" content="https://mapletreeandgardens.netlify.app/hero window.png" />
+    <meta property="og:image" content="https://mapletreeandgardens.netlify.app/hero window.webp" />
     <meta property="og:site_name" content="Maple Tree & Gardens" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Tree Surgeon & Gardener Troon | Professional Tree Surgery & Garden Services Ayrshire" />
     <meta name="twitter:description" content="Professional tree surgeon & qualified gardener serving Troon, Ayr, Prestwick, Dundonald & Ayrshire. Expert tree surgery, garden maintenance, hedge cutting, lawn care & emergency tree removal." />
-    <meta name="twitter:image" content="https://mapletreeandgardens.netlify.app/hero window.png" />
+    <meta name="twitter:image" content="https://mapletreeandgardens.netlify.app/hero window.webp" />
   </head>
 
   <body>
