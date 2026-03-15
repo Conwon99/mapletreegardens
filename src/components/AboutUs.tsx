@@ -115,10 +115,10 @@ const AboutUs = () => {
               <div className="bg-muted/20 rounded-lg p-6 text-center">
                 <h3 className="font-semibold text-lg text-foreground mb-0">Professional Qualifications</h3>
                 <LazyImage
-                  src="/lovable-uploads/Lowe-Maintenance-City-Guilds-NPTC-Qualifications.webp"
+                  src="/uploads/Lowe-Maintenance-City-Guilds-NPTC-Qualifications.webp"
                   alt="NPTC City & Guilds Qualifications"
                   className="w-full max-w-md mx-auto h-auto rounded-lg mt-4"
-                  fallbackSrc="/lovable-uploads/Lowe-Maintenance-City-Guilds-NPTC-Qualifications.jpg"
+                  fallbackSrc="/uploads/Lowe-Maintenance-City-Guilds-NPTC-Qualifications.jpg"
                 />
                 <p className="text-sm text-muted-foreground mt-3">
                   NPTC certified for professional tree surgery and garden maintenance standards

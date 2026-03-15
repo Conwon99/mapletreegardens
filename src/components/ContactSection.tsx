@@ -4,8 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, MessageSquare, Mail, Clock, MapPin } from "lucide-react";
-import { trackPhoneCall, trackMessenger, trackQuoteRequest, trackFormInteraction } from "@/utils/analytics";
+import { Phone, Clock, MapPin } from "lucide-react";
+import { trackPhoneCall, trackQuoteRequest, trackFormInteraction } from "@/utils/analytics";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -38,7 +38,7 @@ const ContactSection = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch('https://formspree.io/f/xnnbokpv', {
+      const response = await fetch('https://formspree.io/f/xwvrkwvl', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -91,85 +91,17 @@ const ContactSection = () => {
     window.location.href = "tel:+447853224528";
   };
 
-  const handleMessengerClick = () => {
-    trackMessenger('contact_section');
-    window.open("https://www.facebook.com/profile.php?id=100085773295610", "_blank");
-  };
-
   return (
-    <section id="contact-form" className="py-20 px-4 bg-[hsl(var(--muted))]">
-      <div className="container mx-auto max-w-6xl">
+    <section id="contact-form" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-[hsl(var(--muted))]">
+      <div className="container mx-auto max-w-6xl overflow-x-hidden">
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-[hsl(var(--asphalt-grey))] mb-6">
-            Get Your Free Tree Surgery & Garden Quote
+          <h2 className="font-display text-4xl lg:text-5xl font-bold text-[hsl(var(--asphalt-grey))]">
+            Contact Us
           </h2>
-          <p className="text-xl text-[hsl(var(--asphalt-grey))] max-w-3xl mx-auto">
-            Call or message us on Facebook now for emergency tree removal, or request a free quote for tree surgery, garden maintenance, hedge cutting, and lawn care services in Troon & Ayrshire—attach photos for a faster estimate.
-          </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="font-display text-2xl font-bold text-[hsl(var(--asphalt-grey))] mb-6">
-                Contact Your Local Tree Surgeon & Gardener
-              </h3>
-              
-              <div className="space-y-4">
-                <Button 
-                  onClick={handleCallClick}
-                  className="w-full justify-start gap-4 p-6 h-auto bg-[hsl(var(--sky-blue))] hover:bg-[hsl(var(--sky-blue))] hover:opacity-90 text-[hsl(var(--asphalt-grey))] rounded-2xl"
-                >
-                  <Phone className="w-6 h-6" />
-                  <div className="text-left">
-                    <div className="font-semibold text-lg">Call Gordon</div>
-                    <div className="text-sm opacity-90">+44 7853 224528</div>
-                  </div>
-                </Button>
-
-                <Button 
-                  onClick={handleMessengerClick}
-                  className="w-full justify-start gap-4 p-6 h-auto bg-[hsl(var(--grass-green))] hover:bg-[hsl(var(--grass-green))] hover:opacity-90 text-white rounded-2xl"
-                >
-                  <MessageSquare className="w-6 h-6" />
-                  <div className="text-left">
-                    <div className="font-semibold text-lg">Facebook Messenger</div>
-                    <div className="text-sm opacity-70">Quick response guaranteed</div>
-                  </div>
-                </Button>
-              </div>
-            </div>
-
-            {/* Business Info */}
-            <div className="space-y-6 pt-8 border-t">
-              <div className="flex items-start gap-4">
-                <Mail className="w-6 h-6 text-[hsl(var(--grass-green))] mt-1" />
-                <div>
-                  <div className="font-semibold text-[hsl(var(--asphalt-grey))]">Email</div>
-                  <div className="text-[hsl(var(--asphalt-grey))] opacity-80">mapletreeayshire@gmail.com</div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <MapPin className="w-6 h-6 text-[hsl(var(--grass-green))] mt-1" />
-                <div>
-                  <div className="font-semibold text-[hsl(var(--asphalt-grey))]">Service Areas</div>
-                  <div className="text-[hsl(var(--asphalt-grey))] opacity-80">Troon, Ayr, Prestwick, Dundonald, and across Ayrshire</div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <Clock className="w-6 h-6 text-[hsl(var(--grass-green))] mt-1" />
-                <div>
-                  <div className="font-semibold text-[hsl(var(--asphalt-grey))]">Response Time</div>
-                  <div className="text-[hsl(var(--asphalt-grey))] opacity-80">Usually within a week for quotes</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Quote Form */}
+        {/* Contact form – centred */}
+        <div className="max-w-2xl mx-auto mb-16">
           <div className="card-service">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
@@ -256,6 +188,29 @@ const ContactSection = () => {
                 Send Quote Request ✨
               </Button>
             </form>
+          </div>
+        </div>
+
+        {/* Contact info – underneath the form */}
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="flex justify-center mb-8">
+            <Button 
+              onClick={handleCallClick}
+              className="w-full sm:w-auto justify-center gap-3 px-8 py-6 h-auto bg-[hsl(var(--sky-blue))] hover:bg-[hsl(var(--sky-blue))] hover:opacity-90 text-[hsl(var(--asphalt-grey))] rounded-2xl font-semibold"
+            >
+              <Phone className="w-6 h-6" />
+              <span>Call Gordon: 07853 224528</span>
+            </Button>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-8 text-[hsl(var(--asphalt-grey))]">
+            <div className="flex items-center gap-2">
+              <MapPin className="w-5 h-5 text-[hsl(var(--grass-green))]" />
+              <span className="text-sm sm:text-base">Troon, Ayr, Prestwick, Dundonald & Ayrshire</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="w-5 h-5 text-[hsl(var(--grass-green))]" />
+              <span className="text-sm sm:text-base">Usually within a week for quotes</span>
+            </div>
           </div>
         </div>
       </div>

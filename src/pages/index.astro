@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero';
+import TrustBar from '../components/TrustBar';
+import AboutUs from '../components/AboutUs';
+import ServicesGrid from '../components/ServicesGrid';
+import Reviews from '../components/Reviews';
+import Gallery from '../components/Gallery';
+import FAQ from '../components/FAQ';
+import ContactSection from '../components/ContactSection';
+
+const baseUrl = 'https://mapletreegardenservices.com';
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Maple Tree & Gardens",
+  "alternateName": "Maple Tree & Gardening Services",
+  "url": baseUrl,
+  "description": "Professional tree surgeon & gardener in Troon & Ayrshire. Tree surgery, lawn care, hedge cutting, garden maintenance.",
+  "publisher": { "@id": `${baseUrl}/#organization` }
+};
+---
+
+<BaseLayout
+  title="Tree Surgeon & Gardener Troon | Professional Tree Surgery & Garden Services Ayrshire"
+  description="Professional tree surgeon & qualified gardener serving Troon, Ayr, Prestwick, Dundonald & Ayrshire. Expert tree surgery, garden maintenance, hedge cutting, lawn care & emergency tree removal. PA1 & PA6 certified."
+  canonical={baseUrl}
+  image={`${baseUrl}/maple-leaf.svg`}
+  additionalSchema={websiteSchema}
+>
+  <main class="min-h-screen overflow-x-hidden w-full">
+    <Hero client:load />
+    <TrustBar client:load />
+    <AboutUs client:load />
+    <ServicesGrid client:load />
+    <Reviews client:load />
+    <Gallery client:load />
+    <FAQ client:load />
+    <ContactSection client:load />
+  </main>
+</BaseLayout>

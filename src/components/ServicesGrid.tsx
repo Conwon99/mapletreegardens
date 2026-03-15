@@ -9,8 +9,8 @@ const ServicesGrid = () => {
       title: "Lawn Mowing & Grass Cutting",
       description: "Professional lawn care and garden maintenance in Troon & Ayrshire",
       features: ["Regular lawn mowing service", "Garden edge trimming", "Grass collection & disposal", "Seasonal lawn treatments"],
-      image: "/lovable-uploads/lawnmower.webp",
-      fallbackImage: "/lovable-uploads/lawnmower.jpg",
+      image: "/uploads/lawnmower.webp",
+      fallbackImage: "/uploads/lawnmower.jpg",
       icon: Scissors,
       color: "grass-green"
     },
@@ -18,8 +18,8 @@ const ServicesGrid = () => {
       title: "Tree Surgery & Removal", 
       description: "Safe tree cutting, pruning and removal services across Ayrshire",
       features: ["Professional tree removal", "Storm damage tree work", "Stump grinding service", "Complete site cleanup"],
-      image: "/lovable-uploads/treecutting.webp",
-      fallbackImage: "/lovable-uploads/treecutting.jpg",
+      image: "/uploads/treecutting.webp",
+      fallbackImage: "/uploads/treecutting.jpg",
       icon: TreePine,
       color: "sky-blue"
     },
@@ -27,8 +27,8 @@ const ServicesGrid = () => {
       title: "Hedge Cutting & Trimming",
       description: "Expert hedge maintenance and garden boundary work",
       features: ["Professional hedge cutting", "Hedge shaping & maintenance", "Height reduction service", "Garden debris removal"],
-      image: "/lovable-uploads/hedge2.webp",
-      fallbackImage: "/lovable-uploads/hedge2.jpg",
+      image: "/uploads/hedge2.webp",
+      fallbackImage: "/uploads/hedge2.jpg",
       icon: Scissors,
       color: "donut-pink"
     },
@@ -36,8 +36,8 @@ const ServicesGrid = () => {
       title: "Garden Strimming & Edging",
       description: "Detailed garden maintenance and precision edge work",
       features: ["Pathway & border edging", "Around garden obstacles", "Hard-to-reach areas", "Professional finishing"],
-      image: "/lovable-uploads/garden1.webp",
-      fallbackImage: "/lovable-uploads/garden1.jpg",
+      image: "/uploads/garden1.webp",
+      fallbackImage: "/uploads/garden1.jpg",
       icon: Scissors,
       color: "sunshine-yellow"
     }

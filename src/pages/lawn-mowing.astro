@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LawnMowing from '../components/pages/LawnMowing';
+
+const baseUrl = 'https://mapletreegardenservices.com';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": baseUrl },
+    { "@type": "ListItem", "position": 2, "name": "Lawn Mowing", "item": `${baseUrl}/lawn-mowing` }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Lawn Mowing Services Troon & Ayrshire",
+  "description": "Professional lawn mowing, grass cutting, and turf care in Troon & Ayrshire. Regular maintenance and seasonal treatments.",
+  "url": `${baseUrl}/lawn-mowing`,
+  "areaServed": [{ "@type": "City", "name": "Troon" }, { "@type": "City", "name": "Prestwick" }, { "@type": "AdministrativeArea", "name": "Ayrshire" }],
+  "provider": { "@id": `${baseUrl}/#organization` }
+};
+---
+
+<BaseLayout
+  title="Lawn Mowing Services Troon & Ayrshire | Professional Grass Cutting & Turf Care"
+  description="Professional lawn mowing and turf care services in Troon & Ayrshire. Regular grass cutting, lawn maintenance, and seasonal treatments. Free quotes available."
+  canonical={`${baseUrl}/lawn-mowing`}
+  image={`${baseUrl}/maple-leaf.svg`}
+  additionalSchema={[breadcrumbSchema, serviceSchema]}
+>
+  <LawnMowing client:load />
+</BaseLayout>

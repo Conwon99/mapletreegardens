@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Troon from '../components/pages/Troon';
+
+const baseUrl = 'https://mapletreegardenservices.com';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": baseUrl },
+    { "@type": "ListItem", "position": 2, "name": "Garden Services Troon", "item": `${baseUrl}/troon` }
+  ]
+};
+
+const placeSchema = {
+  "@context": "https://schema.org",
+  "@type": "Place",
+  "name": "Garden Services in Troon, Ayrshire",
+  "description": "Local garden services in Troon: tree surgery, lawn care, hedge cutting, landscaping. Coastal gardening expertise.",
+  "url": `${baseUrl}/troon`,
+  "address": { "@type": "PostalAddress", "addressLocality": "Troon", "addressRegion": "Ayrshire", "addressCountry": "GB" },
+  "areaServed": [{ "@type": "City", "name": "Troon" }, { "@type": "City", "name": "Barassie" }, { "@type": "City", "name": "Fullarton" }]
+};
+---
+
+<BaseLayout
+  title="Garden Services Troon | Professional Tree Surgery & Lawn Care in Ayrshire"
+  description="Local garden services in Troon, Ayrshire. Tree surgery, lawn care, hedge cutting, and landscaping. Coastal gardening expertise for Troon's unique conditions."
+  canonical={`${baseUrl}/troon`}
+  image={`${baseUrl}/maple-leaf.svg`}
+  additionalSchema={[breadcrumbSchema, placeSchema]}
+>
+  <Troon client:load />
+</BaseLayout>

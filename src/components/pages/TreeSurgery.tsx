@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TreePine, Shield, Clock, Phone, MapPin } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 
 const TreeSurgery = () => {
   const handleQuoteClick = () => {
@@ -12,28 +11,7 @@ const TreeSurgery = () => {
   };
 
   return (
-    <>
-      <Helmet>
-        <title>Tree Surgery Services Troon & Ayrshire | Professional Tree Removal & Pruning</title>
-        <meta name="description" content="Professional tree surgery services in Troon & Ayrshire. Expert tree removal, pruning, and emergency services. PA1 & PA6 certified arborist with 20+ years experience. Free quotes available." />
-        <meta name="keywords" content="tree surgery troon, tree removal ayrshire, tree pruning troon, emergency tree removal, arborist troon, tree cutting ayrshire, stump grinding troon" />
-        <link rel="canonical" href="https://mapletreeandgardens.netlify.app/tree-surgery" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Tree Surgery Services Troon & Ayrshire | Professional Tree Removal & Pruning" />
-        <meta property="og:description" content="Professional tree surgery services in Troon & Ayrshire. Expert tree removal, pruning, and emergency services. PA1 & PA6 certified arborist with 20+ years experience." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://mapletreeandgardens.netlify.app/tree-surgery" />
-        <meta property="og:image" content="https://mapletreeandgardens.netlify.app/lovable-uploads/treecutting.jpg" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Tree Surgery Services Troon & Ayrshire | Professional Tree Removal & Pruning" />
-        <meta name="twitter:description" content="Professional tree surgery services in Troon & Ayrshire. Expert tree removal, pruning, and emergency services. PA1 & PA6 certified arborist with 20+ years experience." />
-        <meta name="twitter:image" content="https://mapletreeandgardens.netlify.app/lovable-uploads/treecutting.jpg" />
-      </Helmet>
-      
-      <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-[hsl(var(--grass-green))] to-[hsl(var(--sky-blue))] text-white">
         <div className="container mx-auto max-w-6xl">
@@ -428,8 +406,7 @@ const TreeSurgery = () => {
           </div>
         </div>
       </section>
-      </div>
-    </>
+    </div>
   );
 };
 

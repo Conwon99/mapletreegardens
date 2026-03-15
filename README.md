@@ -29,10 +29,11 @@ Maple Tree & Gardening Services is a fully qualified and experienced gardening b
 ## Technology
 
 This website is built with:
-- React + TypeScript
-- Vite build tool
-- Tailwind CSS
-- Shadcn/ui components
+- **Astro** – static site generator with file-based routing
+- **React** – interactive components (Navigation, Hero, FAQ, Contact form, etc.) via `@astrojs/react`
+- **TypeScript**
+- **Tailwind CSS**
+- **Shadcn/ui** – Button, Input, Textarea, Toast, etc.
 
 ## Development
 
@@ -43,10 +44,18 @@ npm install
 npm run dev
 ```
 
+Then open [http://localhost:4321](http://localhost:4321) (Astro’s default port).
+
 To build for production:
 
 ```bash
 npm run build
+```
+
+Output is written to `dist/`. Preview the production build with:
+
+```bash
+npm run preview
 ```
 
 ## License

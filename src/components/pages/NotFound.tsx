@@ -1,27 +1,6 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
-import { Helmet } from "react-helmet-async";
-
 const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-  }, [location.pathname]);
-
   return (
-    <>
-      <Helmet>
-        <title>404 - Page Not Found | Maple Tree & Gardens</title>
-        <meta name="description" content="The page you're looking for doesn't exist. Return to Maple Tree & Gardens homepage for professional tree surgery and garden services in Troon & Ayrshire." />
-        <meta name="robots" content="noindex, nofollow" />
-        <link rel="canonical" href="https://mapletreeandgardens.netlify.app/404" />
-      </Helmet>
-      
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="text-center max-w-md mx-auto px-4">
           <h1 className="text-6xl font-bold text-[hsl(var(--grass-green))] mb-4">404</h1>
           <h2 className="text-2xl font-semibold text-[hsl(var(--asphalt-grey))] mb-4">Page Not Found</h2>
@@ -47,8 +26,7 @@ const NotFound = () => {
             </div>
           </div>
         </div>
-      </div>
-    </>
+    </div>
   );
 };
 

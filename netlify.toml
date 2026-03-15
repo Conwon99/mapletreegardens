@@ -2,6 +2,8 @@
   publish = "dist"
   command = "npm run build"
 
+# Astro outputs static site to dist/
+
 [build.environment]
   NODE_VERSION = "18"
 

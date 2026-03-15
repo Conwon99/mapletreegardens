@@ -74,10 +74,11 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button – 44px min touch target */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-3 min-h-[44px] min-w-[44px] flex items-center justify-center -mr-1"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? (
               <X className="w-6 h-6 text-primary-foreground" />

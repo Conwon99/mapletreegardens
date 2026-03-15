@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Scissors, Clock, Phone, MapPin, Award } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 
 const LawnMowing = () => {
   const handleQuoteClick = () => {
@@ -12,28 +11,7 @@ const LawnMowing = () => {
   };
 
   return (
-    <>
-      <Helmet>
-        <title>Lawn Mowing Services Troon & Ayrshire | Professional Grass Cutting & Turf Care</title>
-        <meta name="description" content="Professional lawn mowing and turf care services in Troon & Ayrshire. Regular grass cutting, lawn maintenance, and seasonal treatments. Free quotes available." />
-        <meta name="keywords" content="lawn mowing troon, grass cutting ayrshire, turf care troon, lawn maintenance ayrshire, grass cutting prestwick" />
-        <link rel="canonical" href="https://mapletreeandgardens.netlify.app/lawn-mowing" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Lawn Mowing Services Troon & Ayrshire | Professional Grass Cutting & Turf Care" />
-        <meta property="og:description" content="Professional lawn mowing and turf care services in Troon & Ayrshire. Regular grass cutting, lawn maintenance, and seasonal treatments." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://mapletreeandgardens.netlify.app/lawn-mowing" />
-        <meta property="og:image" content="https://mapletreeandgardens.netlify.app/lovable-uploads/lawnmower.jpg" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Lawn Mowing Services Troon & Ayrshire | Professional Grass Cutting & Turf Care" />
-        <meta name="twitter:description" content="Professional lawn mowing and turf care services in Troon & Ayrshire. Regular grass cutting, lawn maintenance, and seasonal treatments." />
-        <meta name="twitter:image" content="https://mapletreeandgardens.netlify.app/lovable-uploads/lawnmower.jpg" />
-      </Helmet>
-      
-      <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-[hsl(var(--grass-green))] to-[hsl(var(--sky-blue))] text-white">
         <div className="container mx-auto max-w-6xl">
@@ -385,8 +363,7 @@ const LawnMowing = () => {
           </div>
         </div>
       </section>
-      </div>
-    </>
+    </div>
   );
 };
 

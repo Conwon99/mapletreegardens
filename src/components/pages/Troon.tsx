@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Phone, Clock, Award } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 
 const Troon = () => {
   const handleQuoteClick = () => {
@@ -12,28 +11,7 @@ const Troon = () => {
   };
 
   return (
-    <>
-      <Helmet>
-        <title>Garden Services Troon | Professional Tree Surgery & Lawn Care in Ayrshire</title>
-        <meta name="description" content="Local garden services in Troon, Ayrshire. Tree surgery, lawn care, hedge cutting, and landscaping. Coastal gardening expertise for Troon's unique conditions." />
-        <meta name="keywords" content="garden services troon, tree surgery troon, lawn care troon, hedge cutting troon, gardener troon, garden maintenance troon" />
-        <link rel="canonical" href="https://mapletreeandgardens.netlify.app/troon" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Garden Services Troon | Professional Tree Surgery & Lawn Care in Ayrshire" />
-        <meta property="og:description" content="Local garden services in Troon, Ayrshire. Tree surgery, lawn care, hedge cutting, and landscaping. Coastal gardening expertise for Troon's unique conditions." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://mapletreeandgardens.netlify.app/troon" />
-        <meta property="og:image" content="https://mapletreeandgardens.netlify.app/aboutimg.png" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Garden Services Troon | Professional Tree Surgery & Lawn Care in Ayrshire" />
-        <meta name="twitter:description" content="Local garden services in Troon, Ayrshire. Tree surgery, lawn care, hedge cutting, and landscaping. Coastal gardening expertise for Troon's unique conditions." />
-        <meta name="twitter:image" content="https://mapletreeandgardens.netlify.app/aboutimg.png" />
-      </Helmet>
-      
-      <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-[hsl(var(--grass-green))] to-[hsl(var(--sky-blue))] text-white">
         <div className="container mx-auto max-w-6xl">
@@ -394,8 +372,7 @@ const Troon = () => {
           </div>
         </div>
       </section>
-      </div>
-    </>
+    </div>
   );
 };
 

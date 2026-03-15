@@ -21,13 +21,13 @@ const TrustBar = () => {
   ];
 
   return (
-    <section className="py-8 bg-[hsl(var(--trust-bg))]">
-      <div className="container mx-auto max-w-4xl px-4">
-        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
+    <section className="py-6 sm:py-8 bg-[hsl(var(--trust-bg))]">
+      <div className="container mx-auto max-w-4xl px-4 overflow-x-hidden">
+        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-12">
           {trustItems.map((item, index) => (
-            <div key={index} className="flex items-center gap-3 text-[hsl(var(--trust-foreground))]">
-              <item.icon className="w-6 h-6" />
-              <span className="font-semibold text-lg">{item.text}</span>
+            <div key={index} className="flex items-center gap-2 sm:gap-3 text-[hsl(var(--trust-foreground))]">
+              <item.icon className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+              <span className="font-semibold text-sm sm:text-base md:text-lg">{item.text}</span>
             </div>
           ))}
         </div>

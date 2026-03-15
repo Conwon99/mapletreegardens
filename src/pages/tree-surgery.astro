@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TreeSurgery from '../components/pages/TreeSurgery';
+
+const baseUrl = 'https://mapletreegardenservices.com';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": baseUrl },
+    { "@type": "ListItem", "position": 2, "name": "Tree Surgery", "item": `${baseUrl}/tree-surgery` }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Tree Surgery Services Troon & Ayrshire",
+  "description": "Professional tree surgery, tree removal, and tree pruning in Troon & Ayrshire. PA1 & PA6 certified. Emergency tree removal available.",
+  "url": `${baseUrl}/tree-surgery`,
+  "areaServed": [{ "@type": "City", "name": "Troon" }, { "@type": "City", "name": "Prestwick" }, { "@type": "AdministrativeArea", "name": "Ayrshire" }],
+  "provider": { "@id": `${baseUrl}/#organization` }
+};
+---
+
+<BaseLayout
+  title="Tree Surgery Services Troon & Ayrshire | Professional Tree Removal & Pruning"
+  description="Professional tree surgery services in Troon & Ayrshire. Expert tree removal, pruning, and emergency services. PA1 & PA6 certified arborist with 20+ years experience. Free quotes available."
+  canonical={`${baseUrl}/tree-surgery`}
+  image={`${baseUrl}/maple-leaf.svg`}
+  additionalSchema={[breadcrumbSchema, serviceSchema]}
+>
+  <TreeSurgery client:load />
+</BaseLayout>
