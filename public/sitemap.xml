@@ -7,32 +7,96 @@
   <!-- Homepage - highest priority -->
   <url>
     <loc>https://mapletreegardenservices.com/</loc>
-    <lastmod>2025-02-02</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- Services index -->
+  <url>
+    <loc>https://mapletreegardenservices.com/services</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
   </url>
 
   <!-- Service pages - key landing pages -->
   <url>
     <loc>https://mapletreegardenservices.com/tree-surgery</loc>
-    <lastmod>2025-02-02</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
     <loc>https://mapletreegardenservices.com/lawn-mowing</loc>
-    <lastmod>2025-02-02</lastmod>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
 
-  <!-- Location page -->
   <url>
-    <loc>https://mapletreegardenservices.com/troon</loc>
-    <lastmod>2025-02-02</lastmod>
+    <loc>https://mapletreegardenservices.com/hedge-cutting</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://mapletreegardenservices.com/garden-strimming</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Contact page -->
+  <url>
+    <loc>https://mapletreegardenservices.com/contact</loc>
+    <lastmod>2025-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Locations index -->
+  <url>
+    <loc>https://mapletreegardenservices.com/locations</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Location landing pages -->
+  <url>
+    <loc>https://mapletreegardenservices.com/troon</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mapletreegardenservices.com/prestwick</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mapletreegardenservices.com/ayr</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Location-specific service pages: /[location]/[service] -->
+  <url><loc>https://mapletreegardenservices.com/troon/tree-surgery</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://mapletreegardenservices.com/troon/lawn-mowing</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://mapletreegardenservices.com/troon/hedge-cutting</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://mapletreegardenservices.com/troon/garden-strimming</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://mapletreegardenservices.com/prestwick/tree-surgery</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://mapletreegardenservices.com/prestwick/lawn-mowing</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://mapletreegardenservices.com/prestwick/hedge-cutting</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://mapletreegardenservices.com/prestwick/garden-strimming</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://mapletreegardenservices.com/ayr/tree-surgery</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://mapletreegardenservices.com/ayr/lawn-mowing</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://mapletreegardenservices.com/ayr/hedge-cutting</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://mapletreegardenservices.com/ayr/garden-strimming</loc><lastmod>2025-03-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
 
 </urlset>

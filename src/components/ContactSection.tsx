@@ -95,9 +95,12 @@ const ContactSection = () => {
     <section id="contact-form" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-[hsl(var(--muted))]">
       <div className="container mx-auto max-w-6xl overflow-x-hidden">
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-[hsl(var(--asphalt-grey))]">
-            Contact Us
+          <h2 className="font-display text-4xl lg:text-5xl font-bold text-[hsl(var(--asphalt-grey))] mb-4">
+            Get a Free Quote
           </h2>
+          <p className="text-lg text-[hsl(var(--asphalt-grey))] max-w-xl mx-auto">
+            Tell us what you need—tree work, lawn, hedges or a bit of everything. We’ll get back to you with a price.
+          </p>
         </div>
 
         {/* Contact form – centred */}
@@ -179,13 +182,13 @@ const ContactSection = () => {
                   id="message"
                   value={formData.message}
                   onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                  placeholder="Tell us about your garden needs..."
+                  placeholder="What do you need done? (e.g. tree cut back, lawn mowing, hedge trim)"
                   className="mt-2 rounded-xl border-2 min-h-[100px]"
                 />
               </div>
 
               <Button type="submit" className="w-full btn-hero">
-                Send Quote Request ✨
+                Send request for a quote
               </Button>
             </form>
           </div>

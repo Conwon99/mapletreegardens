@@ -6,15 +6,14 @@ const TreeSurgery = () => {
     window.location.href = "tel:+447853224528";
   };
 
-  const handleWhatsAppClick = () => {
-    window.location.href = "https://wa.me/447853224528?text=Hi%20Gordon,%20I'd%20like%20a%20free%20quote%20for%20tree%20surgery%20services";
-  };
-
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-[hsl(var(--grass-green))] to-[hsl(var(--sky-blue))] text-white">
-        <div className="container mx-auto max-w-6xl">
+      <section
+        className="relative py-20 px-4 text-white min-h-[32rem] flex flex-col justify-center bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url(/uploads/treecutting.webp)" }}
+      >
+        <div className="container relative z-10 mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h1 className="font-display text-4xl lg:text-6xl font-bold mb-6">
               Professional Tree Surgery Services in Troon & Ayrshire
@@ -33,14 +32,13 @@ const TreeSurgery = () => {
               <Phone className="w-5 h-5 mr-2" />
               Call for Emergency Tree Removal
             </Button>
-            <Button 
-              onClick={handleWhatsAppClick}
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[hsl(var(--grass-green))] text-lg px-8 py-4 h-auto rounded-full font-semibold"
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-[hsl(var(--grass-green))] text-lg px-8 py-4 h-auto rounded-full font-semibold transition-colors"
             >
               Get Free Quote
               <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -390,14 +388,13 @@ const TreeSurgery = () => {
               <Phone className="w-5 h-5 mr-2" />
               Call: 07853 224528
             </Button>
-            <Button 
-              onClick={handleWhatsAppClick}
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[hsl(var(--grass-green))] text-lg px-8 py-4 h-auto rounded-full font-semibold"
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-[hsl(var(--grass-green))] text-lg px-8 py-4 h-auto rounded-full font-semibold transition-colors"
             >
-              WhatsApp Quote
+              Get Free Quote
               <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+            </a>
           </div>
           
           <div className="flex items-center justify-center gap-2 text-white">

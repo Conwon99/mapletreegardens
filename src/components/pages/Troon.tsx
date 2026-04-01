@@ -6,22 +6,22 @@ const Troon = () => {
     window.location.href = "tel:+447853224528";
   };
 
-  const handleWhatsAppClick = () => {
-    window.location.href = "https://wa.me/447853224528?text=Hi%20Gordon,%20I'd%20like%20a%20free%20quote%20for%20garden%20services%20in%20Troon";
-  };
-
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-[hsl(var(--grass-green))] to-[hsl(var(--sky-blue))] text-white">
-        <div className="container mx-auto max-w-6xl">
+      <section
+        className="relative py-20 px-4 text-white bg-cover bg-center bg-no-repeat min-h-[32rem] flex flex-col justify-center"
+        style={{
+          backgroundImage: `linear-gradient(135deg, hsl(var(--grass-green) / 0.88) 0%, hsl(var(--sky-blue) / 0.82) 100%), url(https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1920&q=80)`,
+        }}
+      >
+        <div className="container relative z-10 mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h1 className="font-display text-4xl lg:text-6xl font-bold mb-6">
-              Professional Garden Services in Troon, Ayrshire
+              Garden Services in Troon
             </h1>
             <p className="text-xl max-w-3xl mx-auto leading-relaxed">
-              Your local tree surgeon and qualified gardener serving Troon and surrounding areas. 
-              Expert <a href="/tree-surgery" className="text-white hover:text-yellow-200 underline">tree surgery</a>, garden maintenance, <a href="/lawn-mowing" className="text-white hover:text-yellow-200 underline">lawn care</a>, and hedge cutting services.
+              Tree surgeon and gardener in Troon, Barassie, Fullarton, Loans and nearby. We do <a href="/tree-surgery" className="text-white hover:text-yellow-200 underline">tree surgery</a>, <a href="/lawn-mowing" className="text-white hover:text-yellow-200 underline">lawn mowing</a>, hedge cutting and garden maintenance. Free quotes.
             </p>
           </div>
           
@@ -33,14 +33,13 @@ const Troon = () => {
               <Phone className="w-5 h-5 mr-2" />
               Call for Troon Garden Services
             </Button>
-            <Button 
-              onClick={handleWhatsAppClick}
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[hsl(var(--grass-green))] text-lg px-8 py-4 h-auto rounded-full font-semibold"
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-[hsl(var(--grass-green))] text-lg px-8 py-4 h-auto rounded-full font-semibold transition-colors"
             >
               Get Free Quote
               <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -356,14 +355,13 @@ const Troon = () => {
               <Phone className="w-5 h-5 mr-2" />
               Call: 07853 224528
             </Button>
-            <Button 
-              onClick={handleWhatsAppClick}
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[hsl(var(--grass-green))] text-lg px-8 py-4 h-auto rounded-full font-semibold"
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-[hsl(var(--grass-green))] text-lg px-8 py-4 h-auto rounded-full font-semibold transition-colors"
             >
-              WhatsApp Quote
+              Get Free Quote
               <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+            </a>
           </div>
           
           <div className="flex items-center justify-center gap-2 text-white">

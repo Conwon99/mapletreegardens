@@ -17,8 +17,8 @@ const Footer = () => {
                 Maple Tree & Gardens
               </h3>
               <p className="text-white leading-relaxed">
-                Friendly, reliable tree surgeon & gardener across Troon, Ayr, Prestwick, Dundonald & Ayrshire. 
-                Professional tree surgery, garden maintenance, hedge cutting & lawn care with a personal touch.
+                Tree surgeon and gardener across Troon, Ayr, Prestwick, Dundonald and Ayrshire. 
+                Tree surgery, lawn mowing, hedge cutting and garden maintenance. We turn up, do the job, and leave the place tidy.
               </p>
             </div>
             
@@ -35,6 +35,9 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-[hsl(var(--sunshine-yellow))]" />
                 <span className="text-white">Troon & Ayrshire, Scotland</span>
               </div>
+              <a href="/contact" className="inline-block mt-2 text-[hsl(var(--sunshine-yellow))] hover:underline font-medium">
+                Contact us →
+              </a>
             </div>
           </div>
 
@@ -45,18 +48,28 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 text-white">
               <li>
+                <a href="/services" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
+                  • All Services
+                </a>
+              </li>
+              <li>
                 <a href="/tree-surgery" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
                   • Tree Surgery & Tree Removal
                 </a>
               </li>
               <li>
                 <a href="/lawn-mowing" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
-                  • Garden Maintenance & Lawn Care
+                  • Lawn Mowing & Grass Cutting
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
-                  • Hedge Cutting & Hedge Trimming
+                <a href="/hedge-cutting" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
+                  • Hedge Cutting & Trimming
+                </a>
+              </li>
+              <li>
+                <a href="/garden-strimming" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
+                  • Garden Strimming & Edging
                 </a>
               </li>
               <li>
@@ -64,53 +77,33 @@ const Footer = () => {
                   • Emergency Tree Removal
                 </a>
               </li>
-              <li>
-                <a href="#services" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
-                  • Garden Clear-outs & Cleanup
-                </a>
-              </li>
-              <li>
-                <a href="/tree-surgery" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
-                  • Tree Pruning & Tree Work
-                </a>
-              </li>
             </ul>
           </div>
 
-          {/* Service Areas */}
+          {/* Locations */}
           <div>
             <h4 className="font-display text-xl font-bold text-[hsl(var(--sunshine-yellow))] mb-6">
-              Service Areas
+              Locations
             </h4>
             <ul className="space-y-3 text-white">
               <li>
-                <a href="/troon" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
-                  • Tree Surgery in Troon
+                <a href="/locations" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
+                  • All locations
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
+                <a href="/troon" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
+                  • Garden Services in Troon
+                </a>
+              </li>
+              <li>
+                <a href="/prestwick" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
                   • Garden Services in Prestwick
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
-                  • Lawn Care in Ayrshire
-                </a>
-              </li>
-              <li>
-                <a href="/troon" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
-                  • Hedge Cutting in Troon
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
-                  • Tree Work in Ayr
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
-                  • Garden Maintenance Ayrshire
+                <a href="/ayr" className="hover:text-[hsl(var(--sunshine-yellow))] transition-colors">
+                  • Garden Services in Ayr
                 </a>
               </li>
             </ul>
@@ -122,9 +115,7 @@ const Footer = () => {
               About Gordon
             </h4>
             <p className="text-white leading-relaxed mb-6">
-              Hi, I'm Gordon—your local, friendly tree surgeon & qualified gardener in Troon. I care about tidy work, 
-              fair prices and leaving every job cleaner than I found it. If you're staring at 
-              brambles, sky-high hedges, or need emergency tree removal, I've got you.
+              I'm Gordon—tree surgeon and gardener in Troon since 2004. I like tidy work, clear prices, and leaving your garden in better shape than when we started. Overgrown hedges, a tree that's had it, or just a lawn that needs a regular cut—get in touch.
             </p>
             
             <div className="flex items-center gap-4">

@@ -5,8 +5,6 @@
 
 # Specific redirects for SEO
 /about           /#about       301
-/services        /#services    301
-/contact         /#contact-form 301
 
 # Handle common requests
 /robots.txt      /robots.txt   200

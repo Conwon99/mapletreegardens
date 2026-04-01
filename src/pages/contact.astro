@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactSection from '../components/ContactSection';
+
+const baseUrl = 'https://mapletreegardenservices.com';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": baseUrl },
+    { "@type": "ListItem", "position": 2, "name": "Contact", "item": `${baseUrl}/contact` }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly will you get back to me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We aim to respond as quickly as possible. For the fastest quote, include your postcode, what you need done, and photos if you can."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What details help you quote accurately?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A short description of the job, access notes (rear garden, parking), and photos (especially for trees and tall hedges) help us quote accurately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which areas do you cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We cover Troon, Prestwick, Ayr and nearby areas across Ayrshire."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Contact Us | Maple Tree & Gardening Services | Free Quote Troon & Ayrshire"
+  description="Get a free quote for tree surgery, lawn care, hedge cutting and garden maintenance in Troon, Prestwick, Ayr & Ayrshire. Call 07853 224528 or send a message."
+  canonical={`${baseUrl}/contact`}
+  image={`${baseUrl}/maple-leaf.svg`}
+  additionalSchema={[breadcrumbSchema, faqSchema]}
+>
+  <main class="min-h-screen pt-16">
+    <section class="py-16 px-4 bg-background">
+      <div class="container mx-auto max-w-6xl">
+        <div class="max-w-3xl mx-auto text-center space-y-5">
+          <h1 class="font-display text-4xl lg:text-5xl font-bold text-[hsl(var(--asphalt-grey))]">
+            Get a free quote
+          </h1>
+          <p class="text-lg text-[hsl(var(--asphalt-grey))] opacity-90 leading-relaxed">
+            Tell us what you need and where you are (postcode helps). For tree work or tall hedges, photos make it much faster for us to give an accurate quote.
+            We cover Troon, Prestwick, Ayr and nearby areas across Ayrshire.
+          </p>
+          <p class="text-lg text-[hsl(var(--asphalt-grey))] opacity-90 leading-relaxed">
+            Prefer to talk it through? Call Gordon on <a href="tel:+447853224528" class="text-[hsl(var(--grass-green))] font-semibold hover:underline">07853 224528</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+    <ContactSection client:load />
+  </main>
+</BaseLayout>

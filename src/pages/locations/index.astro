@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { locations } from '../../data/locations';
+
+const baseUrl = 'https://mapletreegardenservices.com';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": baseUrl },
+    { "@type": "ListItem", "position": 2, "name": "Locations", "item": `${baseUrl}/locations` }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which areas do you cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We cover Troon, Prestwick, Ayr and nearby areas across Ayrshire. If you’re unsure, contact us and we’ll confirm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer free quotes by location?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — free, no-obligation quotes in every area we serve."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I book regular garden maintenance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We can do one-off jobs or set up regular visits for lawns, hedges and general tidying."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Garden Services by Location | Troon, Prestwick, Ayr | Maple Tree & Gardens"
+  description="Professional tree surgery, lawn care, and garden maintenance in Troon, Prestwick, Ayr and across Ayrshire. Choose your area for local service information and free quotes."
+  canonical={`${baseUrl}/locations`}
+  image={`${baseUrl}/maple-leaf.svg`}
+  additionalSchema={[breadcrumbSchema, faqSchema]}
+>
+  <main class="min-h-screen pt-16 bg-background">
+    <section class="py-20 px-4 bg-gradient-to-br from-[hsl(var(--grass-green))] to-[hsl(var(--sky-blue))] text-white">
+      <div class="container mx-auto max-w-6xl text-center">
+        <h1 class="font-display text-4xl lg:text-6xl font-bold mb-6">Our Service Areas</h1>
+        <p class="text-xl max-w-3xl mx-auto leading-relaxed">
+          Professional tree surgery, lawn care, hedge cutting, and garden maintenance across Ayrshire. Select your location for local information and free quotes.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 px-4">
+      <div class="container mx-auto max-w-6xl">
+        <div class="grid lg:grid-cols-2 gap-10 items-start">
+          <div class="space-y-5">
+            <h2 class="font-display text-3xl lg:text-4xl font-bold text-[hsl(var(--asphalt-grey))]">
+              Local, reliable garden help
+            </h2>
+            <div class="text-[hsl(var(--asphalt-grey))] opacity-90 leading-relaxed space-y-4">
+              <p>
+                Whether you need a one-off job (like storm damage tree work) or you want the garden kept under control year-round, we work across key parts of South Ayrshire.
+                Each location page highlights common local garden challenges and the services we offer nearby.
+              </p>
+              <p>
+                The quickest way to get a quote is to choose your area, pick the service you need, and then use the contact page to send details.
+                Photos help, especially for tree work, hedge height reduction, and bigger clear-outs.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg border border-border p-8">
+            <h3 class="font-display text-2xl font-bold text-[hsl(var(--asphalt-grey))] mb-4">
+              What we’re known for
+            </h3>
+            <ul class="space-y-3 text-[hsl(var(--asphalt-grey))] opacity-90">
+              <li class="flex items-start gap-3"><span class="w-2 h-2 bg-[hsl(var(--grass-green))] rounded-full mt-2 flex-shrink-0" />Free, no-obligation quotes</li>
+              <li class="flex items-start gap-3"><span class="w-2 h-2 bg-[hsl(var(--grass-green))] rounded-full mt-2 flex-shrink-0" />Tidy finish and clear communication</li>
+              <li class="flex items-start gap-3"><span class="w-2 h-2 bg-[hsl(var(--grass-green))] rounded-full mt-2 flex-shrink-0" />One-off jobs or regular maintenance</li>
+              <li class="flex items-start gap-3"><span class="w-2 h-2 bg-[hsl(var(--grass-green))] rounded-full mt-2 flex-shrink-0" />Tree work, lawns, hedges and general garden care</li>
+            </ul>
+            <div class="mt-6">
+              <a
+                href="/contact"
+                class="inline-flex items-center gap-2 text-[hsl(var(--grass-green))] font-semibold hover:underline"
+              >
+                Get a free quote
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-4">
+      <div class="container mx-auto max-w-6xl">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {locations.map((loc) => (
+            <a
+              href={`/${loc.slug}`}
+              class="block p-8 rounded-2xl bg-white shadow-lg border border-border hover:shadow-xl hover:border-[hsl(var(--grass-green))] transition-all group"
+            >
+              <h2 class="font-display text-2xl font-bold text-[hsl(var(--asphalt-grey))] mb-3 group-hover:text-[hsl(var(--grass-green))] transition-colors">
+                Garden Services in {loc.name}
+              </h2>
+              <p class="text-[hsl(var(--asphalt-grey))] opacity-80 mb-6">{loc.description}</p>
+              <span class="inline-flex items-center gap-2 text-[hsl(var(--grass-green))] font-semibold group-hover:gap-3 transition-all">
+                View {loc.name} services
+                <span aria-hidden="true">→</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

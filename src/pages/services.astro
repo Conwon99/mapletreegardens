@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServicesPage from '../components/ServicesPage';
+
+const baseUrl = 'https://mapletreegardenservices.com';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": baseUrl },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": `${baseUrl}/services` }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you offer free quotes across Troon & Ayrshire?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — free, no-obligation quotes across Troon, Prestwick, Ayr and the wider Ayrshire area."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I combine services in one visit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Many customers bundle mowing, hedge cutting, strimming/edging, and general maintenance in one visit for a tidy finish."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What affects the cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Job size, access, waste removal/disposal, and whether you want a one-off job or regular visits."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Garden Services Troon & Ayrshire | Tree Surgery, Lawn Care, Hedge Cutting"
+  description="Professional garden services in Troon & Ayrshire: tree surgery, lawn mowing, hedge cutting, and garden strimming. Free quotes. Serving Troon, Prestwick, Ayr and across Ayrshire."
+  canonical={`${baseUrl}/services`}
+  image={`${baseUrl}/maple-leaf.svg`}
+  additionalSchema={[breadcrumbSchema, faqSchema]}
+>
+  <ServicesPage client:load />
+</BaseLayout>

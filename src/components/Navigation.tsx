@@ -19,16 +19,17 @@ const Navigation = () => {
 
   const handleQuoteClick = () => {
     trackQuoteRequest('navigation_button', []);
-    scrollToSection("contact-form");
+    window.location.href = "/contact";
   };
 
   const navItems = [
-    { label: "Home", onClick: () => scrollToSection("hero") },
-    { label: "Services", onClick: () => scrollToSection("services") },
-    { label: "Gallery", onClick: () => scrollToSection("gallery") },
-    { label: "Reviews", onClick: () => scrollToSection("reviews") },
-    { label: "FAQ", onClick: () => scrollToSection("faq") },
-    { label: "Contact", onClick: () => scrollToSection("contact-form") },
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Locations", href: "/locations" },
+    { label: "Gallery", href: "/#gallery", onClick: () => scrollToSection("gallery") },
+    { label: "Reviews", href: "/#reviews", onClick: () => scrollToSection("reviews") },
+    { label: "FAQ", href: "/#faq", onClick: () => scrollToSection("faq") },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -45,15 +46,31 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={item.onClick}
-                className="text-primary-foreground hover:text-primary-foreground/80 transition-colors duration-200 font-medium"
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) =>
+              item.href ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(e) => {
+                    if (item.onClick && window.location.pathname === "/") {
+                      e.preventDefault();
+                      item.onClick?.();
+                    }
+                  }}
+                  className="text-primary-foreground hover:text-primary-foreground/80 transition-colors duration-200 font-medium"
+                >
+                  {item.label}
+                </a>
+              ) : item.onClick ? (
+                <button
+                  key={item.label}
+                  onClick={item.onClick}
+                  className="text-primary-foreground hover:text-primary-foreground/80 transition-colors duration-200 font-medium"
+                >
+                  {item.label}
+                </button>
+              ) : null
+            )}
           </div>
 
           {/* Desktop CTA */}
@@ -92,15 +109,32 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-primary border-t border-primary-foreground/20">
             <div className="py-4 space-y-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.label}
-                  onClick={item.onClick}
-                  className="block w-full text-left px-4 py-2 text-primary-foreground hover:text-primary-foreground/80 hover:bg-primary-foreground/10 transition-colors duration-200"
-                >
-                  {item.label}
-                </button>
-              ))}
+              {navItems.map((item) =>
+                item.href ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={(e) => {
+                      if (item.onClick && window.location.pathname === "/") {
+                        e.preventDefault();
+                        item.onClick?.();
+                      }
+                      setIsMenuOpen(false);
+                    }}
+                    className="block w-full text-left px-4 py-2 text-primary-foreground hover:text-primary-foreground/80 hover:bg-primary-foreground/10 transition-colors duration-200"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <button
+                    key={item.label}
+                    onClick={() => { item.onClick?.(); setIsMenuOpen(false); }}
+                    className="block w-full text-left px-4 py-2 text-primary-foreground hover:text-primary-foreground/80 hover:bg-primary-foreground/10 transition-colors duration-200"
+                  >
+                    {item.label}
+                  </button>
+                )
+              )}
               <div className="px-4 pt-4 border-t border-primary-foreground/20 space-y-3">
                 <Button
                   onClick={handleCallClick}

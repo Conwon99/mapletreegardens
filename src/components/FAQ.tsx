@@ -15,35 +15,35 @@ const FAQ = () => {
   const faqs = [
     {
       question: "How much does tree removal cost in Troon?",
-      answer: "Tree removal costs in Troon vary depending on tree size, location, and complexity. Small trees typically cost £150-300, medium trees £300-600, and large trees £600-1200. We provide free, no-obligation quotes for all tree surgery work. Emergency tree removal may have additional costs due to urgency."
+      answer: "It depends on the size of the tree, where it is, and how tricky the access is. Rough guide: small trees often £150–300, medium £300–600, large trees £600–1200. We give free quotes so you know the cost before we start. Emergency call-outs can cost a bit more because of the urgency."
     },
     {
-      question: "Do you provide emergency tree services?",
-      answer: "Yes, we offer 24/7 emergency tree removal services across Troon, Ayr, Prestwick, and Ayrshire. Whether it's storm damage, fallen trees, or dangerous branches, our qualified arborist team can respond quickly to make your property safe. Call 07853 224528 for immediate assistance."
+      question: "What do I do if a tree falls in my garden?",
+      answer: "Stay clear of the tree and any power lines. Call us on 07853 224528. We do emergency tree removal across Troon, Ayr, Prestwick and Ayrshire. We’ll make the site safe and clear the debris. Storm damage is something we deal with a lot on the coast."
     },
     {
-      question: "What areas of Ayrshire do you cover?",
-      answer: "We provide tree surgery and garden services across Ayrshire, with our main service areas being Troon, Ayr, Prestwick, and Dundonald. We also cover surrounding areas including Irvine, Kilmarnock, and other parts of South Ayrshire. Contact us to confirm coverage for your specific location."
+      question: "What areas do you cover?",
+      answer: "We’re based in Troon and work across Troon, Barassie, Fullarton, Loans, Prestwick, Ayr, Dundonald and the rest of Ayrshire. If you’re not sure, give us a call and we’ll say if we can get to you."
     },
     {
-      question: "Are you fully qualified and insured?",
-      answer: "Yes, we are fully qualified with PA1 and PA6 pesticide application certificates, NPTC City & Guilds qualifications, and 20+ years of professional experience. We carry full public liability insurance and are fully insured for all tree surgery and garden maintenance work."
+      question: "Are you qualified and insured?",
+      answer: "Yes. We have PA1 and PA6 (pesticide use), NPTC tree work qualifications, and over 20 years’ experience. We’re fully insured for tree surgery and garden work, including public liability."
     },
     {
-      question: "How often should I have my lawn mowed?",
-      answer: "Lawn mowing frequency depends on the season and grass growth. During peak growing season (spring/summer), we recommend weekly mowing for best results. In cooler months, fortnightly mowing is usually sufficient. We can create a custom lawn care schedule tailored to your garden's needs."
+      question: "How often should my lawn be mowed?",
+      answer: "In spring and summer, most lawns do best with a cut every week. In autumn and when it’s cooler, every two weeks is often enough. We can set up a regular schedule that suits your garden and your budget."
     },
     {
-      question: "Do you provide hedge cutting services?",
-      answer: "Yes, we offer professional hedge cutting and trimming services across Ayrshire. Our services include hedge shaping, height reduction, formal hedge maintenance, and garden boundary work. We can handle all types of hedges including privet, leylandii, and native species."
+      question: "Do you cut hedges?",
+      answer: "Yes. We do hedge cutting and trimming across Troon and Ayrshire—shaping, height reduction, and boundary hedges. We work on privet, leylandii, laurel and other common hedges. Clippings are taken away and the site left tidy."
     },
     {
-      question: "What is included in your garden maintenance service?",
-      answer: "Our garden maintenance service includes lawn mowing, hedge cutting, garden edging, weed control, seasonal pruning, and general garden tidying. We can also provide seasonal treatments, pest control, and garden clearance services. All work is carried out by our qualified team."
+      question: "What’s included in garden maintenance?",
+      answer: "Lawn mowing, hedge cutting, edging, weeding, pruning when needed, and general tidying. We can also do seasonal treatments and clear-outs. Tell us what you need and we’ll quote for it."
     },
     {
-      question: "Do you offer free quotes?",
-      answer: "Yes, we provide completely free, no-obligation quotes for all our services. You can request a quote by calling 07853 224528, using our contact form, or messaging us on Facebook. We'll visit your property to assess the work and provide a detailed, transparent quote."
+      question: "Do you give free quotes?",
+      answer: "Yes. Free, no-obligation quotes for all our work. Call 07853 224528, use the form on this site, or message us. We’ll come and look, then give you a clear price."
     }
   ];
 
@@ -69,10 +69,10 @@ const FAQ = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl lg:text-5xl font-bold text-[hsl(var(--asphalt-grey))] mb-6">
-              Frequently Asked Questions
+              Questions We Get Asked
             </h2>
             <p className="text-xl text-[hsl(var(--asphalt-grey))] max-w-3xl mx-auto">
-              Common questions about our tree surgery, garden maintenance, and lawn care services in Troon and Ayrshire
+              Real questions from people in Troon and Ayrshire about tree surgery, lawn care, and garden work
             </p>
           </div>
 
@@ -106,7 +106,7 @@ const FAQ = () => {
 
           <div className="text-center mt-12">
             <p className="text-lg text-[hsl(var(--asphalt-grey))] mb-6">
-              Still have questions? We're here to help!
+              Something else you need to know? Call or send a message.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -115,12 +115,12 @@ const FAQ = () => {
               >
                 Call 07853 224528
               </a>
-              <button
-                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+              <a
+                href="/contact"
                 className="inline-flex items-center justify-center px-6 py-3 border-2 border-[hsl(var(--grass-green))] text-[hsl(var(--grass-green))] rounded-full font-semibold hover:bg-[hsl(var(--grass-green))] hover:text-white transition-colors"
               >
                 Get Free Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>

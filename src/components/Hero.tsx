@@ -9,11 +9,6 @@ const Hero = () => {
     window.location.href = "tel:+447853224528";
   };
 
-  const handleQuoteClick = () => {
-    trackQuoteRequest('scroll_to_form', []);
-    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section id="hero" className="bg-background min-h-screen flex items-center py-8 px-4 pt-24 sm:py-12 sm:pt-28 md:py-16 md:pt-28 lg:py-20 lg:pt-32">
       <div className="container mx-auto max-w-7xl overflow-x-hidden">
@@ -34,18 +29,18 @@ const Hero = () => {
             </h1>
 
             <p className="text-base sm:text-lg lg:text-xl text-muted-foreground font-medium max-w-lg leading-relaxed">
-              Fully qualified arborist with 20+ years experience. Expert <a href="/tree-surgery" className="text-primary hover:underline font-semibold">tree surgery</a>, garden maintenance, 
-              <a href="/lawn-mowing" className="text-primary hover:underline font-semibold"> lawn care</a>, and hedge cutting services in Troon, Dundonald, Prestwick & across Ayrshire. Emergency tree removal and tree work also available in Ayr. Free quotes, fully insured.
+              Your local team for <a href="/tree-surgery" className="text-primary hover:underline font-semibold">tree surgery</a>, <a href="/lawn-mowing" className="text-primary hover:underline font-semibold">lawn mowing</a>, hedge cutting and garden maintenance across Troon, Prestwick, Ayr and Ayrshire. Free quotes. Fully insured. Here since 2004.
             </p>
 
             {/* CTA – under the subtext */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <Button 
-                onClick={handleQuoteClick}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground text-base sm:text-lg px-8 py-5 sm:px-10 sm:py-6 h-auto rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-h-[48px] touch-manipulation"
+              <a
+                href="/contact"
+                onClick={(e) => { trackQuoteRequest('hero_button', []); }}
+                className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground text-base sm:text-lg px-8 py-5 sm:px-10 sm:py-6 h-auto rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-h-[48px] touch-manipulation"
               >
                 Get Free Quote
-              </Button>
+              </a>
             </div>
 
             {/* Statistics */}
@@ -77,8 +72,8 @@ const Hero = () => {
           <div className="flex justify-center lg:justify-end -mt-8 sm:-mt-12 lg:-mt-16">
             <LazyImage
               src="/hero window.webp"
-              alt="Professional tree surgeon Gordon cutting large oak tree in Troon garden with hedge trimming and lawn care services in Ayrshire"
-              className="w-full max-w-4xl h-[220px] sm:h-[320px] md:h-[420px] lg:h-[700px] xl:h-[850px] object-contain"
+              alt="Gordon, tree surgeon and gardener in Troon, at work in an Ayrshire garden"
+              className="w-full max-w-4xl h-[340px] sm:h-[400px] md:h-[420px] lg:h-[700px] xl:h-[850px] object-contain"
               fallbackSrc="/hero window.png"
               loading="eager"
             />

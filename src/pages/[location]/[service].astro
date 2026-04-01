@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LocationServicePage from '../../components/LocationServicePage';
+import { locations } from '../../data/locations';
+import { services } from '../../data/services';
+
+export function getStaticPaths() {
+  const paths = locations.flatMap((loc) =>
+    services.map((svc) => ({
+      params: { location: loc.slug, service: svc.slug },
+      props: { location: loc, service: svc },
+    }))
+  );
+  return paths;
+}
+
+const { location, service } = Astro.props;
+const baseUrl = 'https://mapletreegardenservices.com';
+
+type FaqItem = { question: string; answer: string };
+
+function getServiceFaqs(serviceSlug: string, locationName: string): FaqItem[] {
+  const common: FaqItem[] = [
+    {
+      question: `Do you cover areas near ${locationName}?`,
+      answer: `Yes. We cover ${locationName} and nearby areas across Ayrshire. If you’re not sure, call or message us and we’ll confirm availability.`,
+    },
+    {
+      question: `Do you offer free quotes in ${locationName}?`,
+      answer: `Yes — free, no-obligation quotes. Tell us what you need, share photos if you can, and we’ll recommend the best approach.`,
+    },
+  ];
+
+  const byService: Record<string, FaqItem[]> = {
+    'tree-surgery': [
+      {
+        question: `Can you handle storm damage or urgent tree work in ${locationName}?`,
+        answer: `Yes. If a tree or branch is dangerous after wind or storms, contact us and we’ll prioritise safe make-safe work where possible.`,
+      },
+      {
+        question: `Do you remove all waste after tree work?`,
+        answer: `Yes — we leave the site tidy. We can remove cuttings and timber, and can discuss stump handling depending on the job.`,
+      },
+    ],
+    'lawn-mowing': [
+      {
+        question: `Can I book regular lawn mowing in ${locationName}?`,
+        answer: `Yes. We offer regular visits as well as one-off tidy-ups, depending on the season and how quickly your lawn grows.`,
+      },
+      {
+        question: `Do you take the grass clippings away?`,
+        answer: `We can. Let us know your preference and we’ll quote for collection and disposal if needed.`,
+      },
+    ],
+    'hedge-cutting': [
+      {
+        question: `Can you reduce hedge height and shape it neatly?`,
+        answer: `Yes — we can trim, shape, and reduce height to keep boundaries tidy and manageable.`,
+      },
+      {
+        question: `Do you remove hedge cuttings?`,
+        answer: `Yes — we can remove and dispose of cuttings so your garden is left clean and tidy.`,
+      },
+    ],
+    'garden-strimming': [
+      {
+        question: `What’s included with strimming and edging?`,
+        answer: `We strim around obstacles, tidy borders and edges, and finish paths and hard-to-reach areas for a cleaner look.`,
+      },
+      {
+        question: `Can you combine strimming with other services?`,
+        answer: `Yes. Many customers bundle strimming with mowing, hedge cutting, or general garden maintenance for best results.`,
+      },
+    ],
+  };
+
+  return [...(byService[serviceSlug] ?? []), ...common];
+}
+
+const faqs = getServiceFaqs(service.slug, location.name);
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": baseUrl },
+    { "@type": "ListItem", "position": 2, "name": "Locations", "item": `${baseUrl}/locations` },
+    { "@type": "ListItem", "position": 3, "name": `Garden Services ${location.name}`, "item": `${baseUrl}/${location.slug}` },
+    { "@type": "ListItem", "position": 4, "name": service.title, "item": `${baseUrl}/${location.slug}/${service.slug}` }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `${service.title} in ${location.name}`,
+  "description": `${service.description} Serving ${location.name} and Ayrshire.`,
+  "url": `${baseUrl}/${location.slug}/${service.slug}`,
+  "areaServed": location.areaServed,
+  "provider": { "@id": `${baseUrl}/#organization` }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer },
+  })),
+};
+
+const pageTitle = `${service.title} in ${location.name}, Ayrshire | Free Quote | Maple Tree & Gardens`;
+const pageDescription = `${service.title} in ${location.name}, Ayrshire. ${service.shortDescription}. Free, no-obligation quotes across ${location.name} and nearby.`;
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonical={`${baseUrl}/${location.slug}/${service.slug}`}
+  image={`${baseUrl}/maple-leaf.svg`}
+  additionalSchema={[breadcrumbSchema, serviceSchema, faqSchema]}
+>
+  <LocationServicePage location={location} service={service} faqs={faqs} client:load />
+</BaseLayout>
